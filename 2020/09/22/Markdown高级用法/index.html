@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="HWZ-BLOG"/>
+  <meta property="og:title" content="Markdown高级用法"/>
   <meta property="og:description" content="" />
   <meta property="og:site_name" content="HWZ-BLOG"/>
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:image" content="http://example.com"/>
   
     <link rel="alternate" href="/atom.xml" title="HWZ-BLOG" type="application/atom+xml">
@@ -47,7 +47,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Untitled Post</p>
+          <p class="title">Markdown高级用法</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -104,7 +104,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2020-09-22</span>
-            <span class="time">21:44:46</span>
+            <span class="time">22:03:25</span>
           </span>
           
         </div>
@@ -113,7 +113,6 @@
         <!-- Post Main Content -->
         <div class="post-content">
           <hr>
-<h2 id="title-Markdown高级用法"><a href="#title-Markdown高级用法" class="headerlink" title="title:Markdown高级用法"></a>title:Markdown高级用法</h2><hr>
 <p>[TOC]</p>
 <hr>
 <h1 id="Markdown高级用法"><a href="#Markdown高级用法" class="headerlink" title="Markdown高级用法"></a>Markdown高级用法</h1><h2 id="1-分割线元素"><a href="#1-分割线元素" class="headerlink" title="1.分割线元素"></a>1.分割线元素</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 元素1：***</span><br><span class="line">- 元素2：___</span><br><span class="line">- 元素3：---</span><br></pre></td></tr></table></figure>
@@ -141,13 +140,13 @@
 
 
 
-<h2 id="3-图片元素"><a href="#3-图片元素" class="headerlink" title="3.图片元素"></a>3.图片元素</h2><h3 id="1）行内式-更常用"><a href="#1）行内式-更常用" class="headerlink" title="1）行内式(更常用)"></a>1）行内式(更常用)</h3><p><img src="C:\Users\ASUS\Desktop\捕获.PNG" alt="背景图"></p>
+<h2 id="3-图片元素"><a href="#3-图片元素" class="headerlink" title="3.图片元素"></a>3.图片元素</h2><h3 id="1）行内式-更常用"><a href="#1）行内式-更常用" class="headerlink" title="1）行内式(更常用)"></a>1）行内式(更常用)</h3><p><img src="C:\Users\ASUS\Desktop\海绵宝宝.jpg" alt="背景图"></p>
 <p>语法格式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片名称](图片的绝对路径)</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="2）参考式"><a href="#2）参考式" class="headerlink" title="2）参考式"></a>2）参考式</h3><p><img src="C:\Users\ASUS\Desktop\捕获.PNG" alt="图片1"></p>
+<h3 id="2）参考式"><a href="#2）参考式" class="headerlink" title="2）参考式"></a>2）参考式</h3><p><img src="C:\Users\ASUS\Desktop\海绵宝宝.jpg" alt="图片1"></p>
 <p>语法格式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">步骤一 定义变量：</span><br><span class="line">[变量名]:图片绝对路路径</span><br><span class="line">步骤二 使用变量</span><br><span class="line">![图片名][变量名]</span><br></pre></td></tr></table></figure>
 
@@ -162,29 +161,17 @@
 <h3 id="4-任务列表编写"><a href="#4-任务列表编写" class="headerlink" title="4)任务列表编写"></a>4)任务列表编写</h3><ul>
 <li>任务一 未做任务 <code>- + 空格 + [ ]</code></li>
 <li></li>
-<li><input disabled="" type="checkbox"> 任务二 已做任务 <code>- + 空格 + [x]</code></li>
+<li><input checked="" disabled="" type="checkbox"> 任务二 已做任务 <code>- + 空格 + [x]</code></li>
 <li><input disabled="" type="checkbox"> </li>
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-</span> <span class="selector-attr">[ ]</span> 任务一 未做任务 `<span class="selector-tag">-</span> + 空格 + <span class="selector-attr">[ ]</span>`</span><br><span class="line"><span class="selector-tag">-</span> <span class="selector-attr">[x]</span> 任务二 已做任务 `<span class="selector-tag">-</span> + 空格 + <span class="selector-attr">[x]</span>`</span><br></pre></td></tr></table></figure>
 
-<h2 id="4-布局"><a href="#4-布局" class="headerlink" title="4.布局"></a>4.布局</h2><h3 id="1）段落代码区块："><a href="#1）段落代码区块：" class="headerlink" title="1）段落代码区块："></a>1）段落代码区块：</h3><p>例子：头文件: <code>#include&lt;iostream</code></p>
-<center>行中心对齐<center>
-
-<p align="left">行左对齐</p>
-
-<p align="right">行右对齐</p>
-
-
-
-<p>代码实现：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子：头文件: `<span class="selector-id">#include</span>&lt;<span class="selector-tag">iostream</span>`</span><br><span class="line">&lt;center&gt;行中心对齐&lt;/center&gt;</span><br><span class="line">&lt;p align=&quot;left&quot;&gt;行左对齐&lt;/p&gt;</span><br><span class="line">&lt;p align=&quot;right&quot;&gt;行右对齐&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><input disabled="" type="checkbox"> <em>斜体</em>或<em>斜体</em></li>
-<li><input disabled="" type="checkbox"> <strong>粗体</strong></li>
-<li><input disabled="" type="checkbox"> <strong><em>加粗斜体</em></strong></li>
-<li><input disabled="" type="checkbox"> <del>删除线</del></li>
-<li><input disabled="" type="checkbox"> <u>下划线</u></li>
+<h2 id="4-布局"><a href="#4-布局" class="headerlink" title="4.布局"></a>4.布局</h2><h3 id="1）字体样式："><a href="#1）字体样式：" class="headerlink" title="1）字体样式："></a>1）字体样式：</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <em>斜体</em>或<em>斜体</em></li>
+<li><input checked="" disabled="" type="checkbox"> <strong>粗体</strong></li>
+<li><input checked="" disabled="" type="checkbox"> <strong><em>加粗斜体</em></strong></li>
+<li><input checked="" disabled="" type="checkbox"> <del>删除线</del></li>
+<li><input checked="" disabled="" type="checkbox"> <u>下划线</u></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*斜体*或_斜体_</span><br><span class="line">**粗体**</span><br><span class="line">***加粗斜体***</span><br><span class="line">~~删除线~~</span><br><span class="line">&lt;u&gt;下划线&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
 
@@ -198,9 +185,9 @@
 <ul>
 <li>自动链接</li>
 </ul>
-<p>&lt;<a target="_blank" rel="noopener" href="http://baidu.com/&gt;">http://baidu.com/&gt;</a>&emsp;</p>
+<p>&lt;<a target="_blank" rel="noopener" href="http://baidu.com&gt;/">http://baidu.com&gt;</a>&emsp;</p>
 <p><strong>本人的邮箱：</strong></p>
-<p>&lt;<a href="mailto:&#49;&#49;&#x30;&#57;&#49;&#x35;&#x32;&#48;&#x39;&#51;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#109;">&#49;&#49;&#x30;&#57;&#49;&#x35;&#x32;&#48;&#x39;&#51;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#109;</a>&gt;</p>
+<p>&lt;<a href="mailto:&#x31;&#49;&#48;&#x39;&#49;&#53;&#50;&#x30;&#x39;&#51;&#64;&#113;&#x71;&#46;&#x63;&#111;&#109;">&#x31;&#49;&#48;&#x39;&#49;&#53;&#50;&#x30;&#x39;&#51;&#64;&#113;&#x71;&#46;&#x63;&#111;&#109;</a>&gt;</p>
 <p>代码生成：</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;http:<span class="comment">//baidu.com/&gt;&amp;emsp;</span></span><br><span class="line">&amp;lt;<span class="number">1109152093</span><span class="meta">@qq</span>.com&amp;gt;</span><br></pre></td></tr></table></figure>
 
@@ -227,7 +214,7 @@
 <p>代码实现:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 有序列表项 一</span><br><span class="line">2. 有序列表项 二</span><br><span class="line">3. 有序列表项 三</span><br></pre></td></tr></table></figure>
 
-<h2 id="多级引用"><a href="#多级引用" class="headerlink" title="多级引用"></a>多级引用</h2><blockquote>
+<h2 id="5-多级引用"><a href="#5-多级引用" class="headerlink" title="5.多级引用"></a>5.多级引用</h2><blockquote>
 <p>教程在哪？ - 小白</p>
 <blockquote>
 <p>自己看教程！ - 愤青</p>
@@ -251,7 +238,7 @@
 <p>代码实现：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 教程在哪？ - 小白</span><br><span class="line"> &gt;自己看教程！ - 愤青</span><br><span class="line">  &gt;请问 Markdwon 怎么用？ - 小白</span><br><span class="line"><span class="meta">&gt;&gt;</span> 自己看教程！ - 愤青</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; 请问 Markdwon 怎么用？ - 小白</span><br></pre></td></tr></table></figure>
 
-<h3 id="转义字符、字体、字号、颜色"><a href="#转义字符、字体、字号、颜色" class="headerlink" title="转义字符、字体、字号、颜色"></a>转义字符、字体、字号、颜色</h3><p>Markdown中的转义字符为\，转义的有：</p>
+<h3 id="1）转义字符、字体、字号、颜色"><a href="#1）转义字符、字体、字号、颜色" class="headerlink" title="1）转义字符、字体、字号、颜色"></a>1）转义字符、字体、字号、颜色</h3><p>Markdown中的转义字符为\，转义的有：</p>
 <p>\ 反斜杠 抵消效果</p>
 <p>` 反引号 * 星号 _ 下划线 {} 大括号 [] 中括号 () 小括号  # 井号 + 加号 - 减号 . 英文句号 ! 感叹号</p>
 <p>如下：</p>
@@ -268,12 +255,12 @@
 
 
 
-<h3 id="1-显示目录结构："><a href="#1-显示目录结构：" class="headerlink" title="1)显示目录结构："></a>1)显示目录结构：</h3><p>目录: </p>
+<h3 id="2-显示目录结构："><a href="#2-显示目录结构：" class="headerlink" title="2)显示目录结构："></a>2)显示目录结构：</h3><p>目录: </p>
 <p>[TOC]</p>
 <p>代码实现：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
 
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>语法说明：</p>
+<h2 id="6-表格"><a href="#6-表格" class="headerlink" title="6.表格"></a>6.表格</h2><p>语法说明：</p>
 <p>不管是哪种方式，第一行为表头，第二行分隔表头和主体部分，第三行开始每一行为一个表格行。<br> 列于列之间用管道符|隔开。原生方式的表格每一行的两边也要有管道符。<br> 第二行还可以为不同的列指定对齐方向。默认为左对齐，在-右边加上:就右对齐。<br> <code>:-</code> 左对齐， <code>:-:</code> 中心对齐，<code>-:</code> 右对齐</p>
 <table>
 <thead>
@@ -299,7 +286,7 @@
 <td align="right">27</td>
 </tr>
 </tbody></table>
-<h3 id="2-LaTeX公式"><a href="#2-LaTeX公式" class="headerlink" title="2)LaTeX公式"></a>2)LaTeX公式</h3><ul>
+<h3 id="1-LaTeX公式"><a href="#1-LaTeX公式" class="headerlink" title="1)LaTeX公式"></a>1)LaTeX公式</h3><ul>
 <li><strong>表示行内公式</strong></li>
 </ul>
 <p>显示效果：</p>
@@ -419,7 +406,17 @@
 <td align="center"><code>&amp;sup3;</code></td>
 </tr>
 </tbody></table>
+<h3 id="2）段落代码区块："><a href="#2）段落代码区块：" class="headerlink" title="2）段落代码区块："></a>2）段落代码区块：</h3><p>例子：头文件: <code>#include&lt;iostream</code></p>
+<center>行中心对齐<center>
 
+<p align="left">行左对齐</p>
+
+<p align="right">行右对齐</p>
+
+
+
+<p>代码实现：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子：头文件: `<span class="selector-id">#include</span>&lt;<span class="selector-tag">iostream</span>`</span><br><span class="line">&lt;center&gt;行中心对齐&lt;/center&gt;</span><br><span class="line">&lt;p align=&quot;left&quot;&gt;行左对齐&lt;/p&gt;</span><br><span class="line">&lt;p align=&quot;right&quot;&gt;行右对齐&lt;/p&gt;</span><br></pre></td></tr></table></figure>
         </div>
       </div>
     </div>
