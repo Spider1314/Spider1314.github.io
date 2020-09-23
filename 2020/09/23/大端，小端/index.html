@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="大端模式和小端模式"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="HWZ-BLOG"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://example.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="HWZ-BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>HWZ-BLOG</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">大端模式和小端模式</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2020-09-23</span>
+            <span class="time">22:34:16</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h3 id="1-大端和小端的核心："><a href="#1-大端和小端的核心：" class="headerlink" title="1.大端和小端的核心："></a>1.大端和小端的核心：</h3><p>大端模式和小端模式是实际的<u>字节顺序</u>和<u>存储的地址顺序</u>对应的关系的两种模，总结如下：</p>
+<p>大端模式：低地址对应高字节</p>
+<p>小端模式：低地址对应低字节</p>
+<h3 id="2-大端模式向小端模式发送数据："><a href="#2-大端模式向小端模式发送数据：" class="headerlink" title="2.大端模式向小端模式发送数据："></a>2.大端模式向小端模式发送数据：</h3><p>A大端存储模式</p>
+<p>假设A要发送四字节的数据给B，A的存储是按照大端模式，B的存储模式为小端模式。</p>
+<p>A的存储1234内存分布如下图</p>
+<table>
+<thead>
+<tr>
+<th>存储地址</th>
+<th>0x2000 4001</th>
+<th>0x2000 4002</th>
+<th>0x2000 4003</th>
+<th>0x2000 4004</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>存储的值</td>
+<td>0x12</td>
+<td>0x34</td>
+<td>0x56</td>
+<td>0x78</td>
+</tr>
+</tbody></table>
+<p>因为A存储是按照大端模式，依据低地址对应高字节的规律，那么A要发送值int Value_A = 0x12345678。</p>
+<p>Value_A将会由低地址依次发送给B，这里为什么是低地址，因为发送的开始，就是去读取数据，读取数据一定是从低地址开始读取得，那么B依次接收的值为0x12，0x34，0x560，x78。</p>
+<p>B将接收到的值存储在如下图的内存中，存储的时候也是按照低地址往高地址开始依次存储</p>
+<table>
+<thead>
+<tr>
+<th>存储地址</th>
+<th>0x2000 8001</th>
+<th>0x2000 8002</th>
+<th>0x2000 8003</th>
+<th>0x2000 8004</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>存储的值</td>
+<td>0x12</td>
+<td>0x34</td>
+<td>0x56</td>
+<td>0x78</td>
+</tr>
+</tbody></table>
+<p>B接收完毕后，需要将内存中的值读取到Value_B中来，那么Value_B的值是多少呢？</p>
+<p>B的存储是按照小端模式存储，低地址对应的低字节，那么int Value_B = 0x78563412</p>
+<h3 id="3-小端转大端函数讲解和原理分析"><a href="#3-小端转大端函数讲解和原理分析" class="headerlink" title="3.小端转大端函数讲解和原理分析"></a>3.小端转大端函数讲解和原理分析</h3><p>下面是一个将小端转化为大端的函数：</p>
+<p>UINT32  LE2BE(UINT8 *dat,UINT8  len)</p>
+<p>{</p>
+<p>UINT32  temp=0,fact=1;</p>
+<p>UINT8   i=0;</p>
+<p>for(i=0;i&lt;len;i++)</p>
+<p>{</p>
+<p>temp+=dat[i]*fact;</p>
+<p>fact*=256;</p>
+<p>}</p>
+<p>return temp;</p>
+<p>}</p>
+<p>这段程序是什么意思呢？</p>
+<p>我们还是举例说明。</p>
+<p>在上面的案例中，如果B要给A发送int test_B = 0x12345678，B的存储就是小端模式，B要将0x12345678正确的发送给A，那么按照上面的发送和接收，A是不会接收到0x12345678的。</p>
+<p>A会依次接收到0x78,0x56,0x34,0x12，不经过转换，低地址对应高字节，test_A = 0x78563412。</p>
+<p>这里就需要按照上面进行转换。</p>
+<p>上面的程序意图如下：</p>
+<p>temp = 0x78<em>1 + 0x56</em>256 + 0x34 * 256<em>256 + 0x12</em>256<em>256</em>256</p>
+<p>   = 120+22016+3407872+301989888</p>
+<p>   = 305419896</p>
+<p>   = 0x12345678</p>
+<p>经过转换，A获取的值就是temp值，也就是B传送过来的值了。</p>
+<h4 id="看到这里，就算是把大端和小端的问题说明白了，实际上的问题核心就是一个是字节顺序，一个存储顺序。"><a href="#看到这里，就算是把大端和小端的问题说明白了，实际上的问题核心就是一个是字节顺序，一个存储顺序。" class="headerlink" title="看到这里，就算是把大端和小端的问题说明白了，实际上的问题核心就是一个是字节顺序，一个存储顺序。"></a>看到这里，就算是把大端和小端的问题说明白了，实际上的问题核心就是一个是字节顺序，一个存储顺序。</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
