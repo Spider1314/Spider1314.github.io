@@ -104,7 +104,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2020-09-23</span>
-            <span class="time">22:39:01</span>
+            <span class="time">10:30:10</span>
           </span>
           
         </div>
@@ -160,27 +160,16 @@
 <p>B接收完毕后，需要将内存中的值读取到Value_B中来，那么Value_B的值是多少呢？</p>
 <p>B的存储是按照小端模式存储，低地址对应的低字节，那么int Value_B = 0x78563412</p>
 <h3 id="3-小端转大端函数讲解和原理分析"><a href="#3-小端转大端函数讲解和原理分析" class="headerlink" title="3.小端转大端函数讲解和原理分析"></a>3.小端转大端函数讲解和原理分析</h3><p>下面是一个将小端转化为大端的函数：</p>
-<p>UINT32  LE2BE(UINT8 *dat,UINT8  len)</p>
-<p>{</p>
-<p>UINT32  temp=0,fact=1;</p>
-<p>UINT8   i=0;</p>
-<p>for(i=0;i&lt;len;i++)</p>
-<p>{</p>
-<p>temp+=dat[i]*fact;</p>
-<p>fact*=256;</p>
-<p>}</p>
-<p>return temp;</p>
-<p>}</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">UINT32  <span class="title">LE2BE</span><span class="params">(UINT8 *dat,UINT8  len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    UINT32  temp=<span class="number">0</span>,fact=<span class="number">1</span>;</span><br><span class="line">    UINT8   i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        temp+=dat[i]*fact;</span><br><span class="line">        fact*=<span class="number">256</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这段程序是什么意思呢？</p>
 <p>我们还是举例说明。</p>
 <p>在上面的案例中，如果B要给A发送int test_B = 0x12345678，B的存储就是小端模式，B要将0x12345678正确的发送给A，那么按照上面的发送和接收，A是不会接收到0x12345678的。</p>
 <p>A会依次接收到0x78,0x56,0x34,0x12，不经过转换，低地址对应高字节，test_A = 0x78563412。</p>
 <p>这里就需要按照上面进行转换。</p>
 <p>上面的程序意图如下：</p>
-<p>temp = 0x78<em>1 + 0x56</em>256 + 0x34 * 256<em>256 + 0x12</em>256<em>256</em>256</p>
-<p>   = 120+22016+3407872+301989888</p>
-<p>   = 305419896</p>
-<p>   = 0x12345678</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">temp &#x3D; 0x78*1 + 0x56*256 + 0x34 * 256*256 + 0x12*256*256*256</span><br><span class="line">     &#x3D; 120+22016+3407872+301989888</span><br><span class="line">   	 &#x3D; 305419896</span><br><span class="line">   	 &#x3D; 0x12345678</span><br></pre></td></tr></table></figure>
+
 <p>经过转换，A获取的值就是temp值，也就是B传送过来的值了。</p>
 <h4 id="看到这里，就算是把大端和小端的问题说明白了，实际上的问题核心就是一个是字节顺序，一个存储顺序。"><a href="#看到这里，就算是把大端和小端的问题说明白了，实际上的问题核心就是一个是字节顺序，一个存储顺序。" class="headerlink" title="看到这里，就算是把大端和小端的问题说明白了，实际上的问题核心就是一个是字节顺序，一个存储顺序。"></a>看到这里，就算是把大端和小端的问题说明白了，实际上的问题核心就是一个是字节顺序，一个存储顺序。</h4>
         </div>
