@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="Hello World" />
+  <meta property="og:title" content="C++中可以使用变量作为数组长度吗？" />
   <meta property="og:description" content="" />
   <meta property="og:site_name" content="HWZ-BLOG" />
   <meta property="og:type" content="article" />
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Hello World</p>
+          <p class="title">C++中可以使用变量作为数组长度吗？</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -101,7 +101,7 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2020-09-15</span>
+            <span class="date">2020-11-20</span>
             <span class="time">19:47:18</span>
           </span>
           
@@ -110,19 +110,20 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+          <p>首先明确一点：<code>C++是不可以使用变量作为数组长度的</code></p>
+<p>那为什么有些地方的C++用了变量做数组长度，没有报错呢？<br>那是因为这是C99标准的一部分，叫做 变长数组 即 变量长度数组，这个特性是g++编译器的扩展</p>
+<p>换言之，C语言自C99 开始，在特定条件下允许使用变量作为数组长度定义数组。 而C++ 至今不允许这种用法</p>
+<h3 id="一般想要变量作为数组长度有以下几种方式"><a href="#一般想要变量作为数组长度有以下几种方式" class="headerlink" title="一般想要变量作为数组长度有以下几种方式"></a>一般想要变量作为数组长度有以下几种方式</h3><h4 id="法一："><a href="#法一：" class="headerlink" title="法一："></a>法一：</h4><p>利用C++ new动态申请</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span>* a = <span class="keyword">new</span> <span class="keyword">double</span>[n]; </span><br><span class="line">...</span><br><span class="line"><span class="keyword">delete</span> [] a;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h4 id="法二："><a href="#法二：" class="headerlink" title="法二："></a>法二：</h4><p>利用STL中的vector容器</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">a</span><span class="params">(n)</span></span>; </span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h4 id="法三："><a href="#法三：" class="headerlink" title="法三："></a>法三：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> a[n];</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/72a5a919508a4251859fb2cfb987a0e6?tpId=13&tqId=11163&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking">练习题</a></p>
 
         </div>
       </div>
