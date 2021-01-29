@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="TCP的三次握手和四次挥手" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="HWZ-BLOG" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://example.com" />
+  
+  <link rel="alternate" href="/atom.xml" title="HWZ-BLOG" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>HWZ-BLOG</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">TCP的三次握手和四次挥手</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+            <li>
+              <a href="/">
+                
+                Home
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="/archives">
+                
+                Archives
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://github.com/<your-github-username>">
+                
+                Github
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="mailto:<your-email-address>">
+                
+                Email
+                
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2020-10-08</span>
+            <span class="time">13:45:21</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h2 id="TCP的三次握手和四次挥手"><a href="#TCP的三次握手和四次挥手" class="headerlink" title="TCP的三次握手和四次挥手"></a>TCP的三次握手和四次挥手</h2><p>UDP的特点：面向无连接，以数据报文形式传输，效率高，但是可能会丢包 乱序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.面向无连接(1-1,1-n 组播，广播)</span><br><span class="line">2.数据报文（固定大小）</span><br><span class="line">3.效率高，丢包，乱序（解决办法：手动添加重传和校验检查）</span><br><span class="line"></span><br><span class="line">广播：</span><br><span class="line">直接广播：向指定网段内发送数据，跨路由器传输</span><br><span class="line">有限广播：向局域网内任意网段发送数据，不能跨路由器传输</span><br></pre></td></tr></table></figure>
+
+
+
+<p>TCP的特点：1.面向连接(3词握手，四次挥手0) 2.数据流（可以任意拆分）3.重传校验检查、滑动窗口、拥塞控制</p>
+<p>出现丢包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">算法拥塞控制</span><br><span class="line">1.如果是网络拥塞：</span><br><span class="line">新的门限值&#x3D;拥塞窗口&#x2F;2</span><br><span class="line">cwnd&#x3D;1；</span><br><span class="line"></span><br><span class="line">2.如果是普通的丢包：（判断：是否收到三个重复确认）</span><br><span class="line">新的门限值&#x3D;拥塞窗口&#x2F;2</span><br><span class="line">cwnd&#x3D;新的门限值；</span><br></pre></td></tr></table></figure>
+
+<p>TCP四次挥手（全双关的发送方式）</p>
+<p>​                                  S                                                        Y</p>
+<p>​            FIN WAIT 1——FIN=1 序号=x————-&gt;CLOSE WAIT 关闭读</p>
+<p>关闭写FIN WAIT 2&lt;—-ACK=1 确认序号=x+1—–CLOSE WAIT</p>
+<p>关闭读FIN WAIT   &lt;—–FIN=1 序号=Y—————-LASK ACK</p>
+<p>​                   |</p>
+<p>​              closed      ——ACK=1 序号=Y+1————&gt;closed（关闭写）</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">TIME WAIT=&gt;</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>MSL</span><br><span class="line"></span><br><span class="line">Maxinum Segment</span><br><span class="line"></span><br><span class="line">LifeTime</span><br><span class="line"></span><br><span class="line">Windows <span class="number">30</span>s</span><br><span class="line"></span><br><span class="line">RFC 		<span class="number">2</span>min</span><br></pre></td></tr></table></figure>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

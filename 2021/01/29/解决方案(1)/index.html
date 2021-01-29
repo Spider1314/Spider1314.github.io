@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="电脑图标闪烁解决方案" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="HWZ-BLOG" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://example.com" />
+  
+  <link rel="alternate" href="/atom.xml" title="HWZ-BLOG" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>HWZ-BLOG</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">电脑图标闪烁解决方案</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+            <li>
+              <a href="/">
+                
+                Home
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="/archives">
+                
+                Archives
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://github.com/<your-github-username>">
+                
+                Github
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="mailto:<your-email-address>">
+                
+                Email
+                
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2021-01-29</span>
+            <span class="time">13:45:21</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h3 id="症状："><a href="#症状：" class="headerlink" title="症状："></a>症状：</h3><p>桌面和任务栏图标不断刷新，CPU资源占用高，极度影响使用</p>
+<h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>一般是windows更新或者卸载了某软件引起，系统和应用争抢默认打开方式。</p>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>这里我提供一个更通用、更彻底的解决方法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 按win+r，输入regedit，</span><br><span class="line">找到HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\currentversion\Explorer\FileExts，</span><br><span class="line">将FileExts 整个注册表项右键导出备份，注意是整个，<span class="tag">&lt;<span class="name">备份好</span>&gt;</span>[人习惯]	先别关掉页面个。</span><br><span class="line"></span><br><span class="line">2.</span><br><span class="line">打开任务管理器，将资源管理器（即explorer.exe）进程结束掉。</span><br><span class="line">结束后，再到注册表删除FileExts，删完按Ctrl+alt+del，右下角电源图标重启电脑。</span><br><span class="line">重启后桌面会闪几下，这是在初始化，随后恢复正常。</span><br></pre></td></tr></table></figure>
+
+<center>
+    <div class="footer">
+        &copy 2021 hwz-blog
+    <div/>    
+</center>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

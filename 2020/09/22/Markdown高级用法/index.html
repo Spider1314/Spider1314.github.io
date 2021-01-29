@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Markdown高级用法" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="HWZ-BLOG" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://example.com" />
+  
+  <link rel="alternate" href="/atom.xml" title="HWZ-BLOG" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>HWZ-BLOG</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Markdown高级用法</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+            <li>
+              <a href="/">
+                
+                Home
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="/archives">
+                
+                Archives
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://github.com/<your-github-username>">
+                
+                Github
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="mailto:<your-email-address>">
+                
+                Email
+                
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2020-09-22</span>
+            <span class="time">13:45:21</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <hr>
+<p>[TOC]</p>
+<hr>
+<h1 id="Markdown高级用法"><a href="#Markdown高级用法" class="headerlink" title="Markdown高级用法"></a>Markdown高级用法</h1><h2 id="1-分割线元素"><a href="#1-分割线元素" class="headerlink" title="1.分割线元素"></a>1.分割线元素</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 元素1：***</span><br><span class="line">- 元素2：___</span><br><span class="line">- 元素3：---</span><br></pre></td></tr></table></figure>
+
+<p>注意：分割元素之间不可以出现字符内容，但是可以出现空格</p>
+<p>—加回车写标题：title: </p>
+<h3 id="1-代码区块"><a href="#1-代码区块" class="headerlink" title="1)代码区块"></a>1)代码区块</h3><p>c++语言的代码区块</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>代码实现：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">​```c++</span><br><span class="line">​```</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-超链接元素"><a href="#2-超链接元素" class="headerlink" title="2.超链接元素"></a>2.超链接元素</h2><p>超链接元素可以提供到另一个网页链接的入口</p>
+<h3 id="1）行内式（更常用）"><a href="#1）行内式（更常用）" class="headerlink" title="1）行内式（更常用）"></a>1）行内式（更常用）</h3><p><a target="_blank" rel="noopener" href="http://www.baidu.com/">百度</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">语法格式：</span><br><span class="line">	[超链接名字](具体url)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-参考式"><a href="#2-参考式" class="headerlink" title="2)参考式"></a>2)参考式</h3><h4 id="步骤一：定义一个变量"><a href="#步骤一：定义一个变量" class="headerlink" title="步骤一：定义一个变量"></a>步骤一：定义一个变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[变量名]:具体网址</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="http//www.baidu.com'">百度一号地址</a></p>
+<p><a href="http//www.baidu.com'">搜索</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[链接名][变量名]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-图片元素"><a href="#3-图片元素" class="headerlink" title="3.图片元素"></a>3.图片元素</h2><h3 id="1）行内式-更常用"><a href="#1）行内式-更常用" class="headerlink" title="1）行内式(更常用)"></a>1）行内式(更常用)</h3><p><img src="https://img-blog.csdnimg.cn/20200922221411797.jpg#pic_center" alt="背景图"></p>
+<p>语法格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片名称](图片的绝对路径)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2）参考式"><a href="#2）参考式" class="headerlink" title="2）参考式"></a>2）参考式</h3><p><img src="https://img-blog.csdnimg.cn/20200922221411797.jpg#pic_center" alt="图片1"></p>
+<p>语法格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">步骤一 定义变量：</span><br><span class="line">[变量名]:图片绝对路路径</span><br><span class="line">步骤二 使用变量</span><br><span class="line">![图片名][变量名]</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3）编写注释"><a href="#3）编写注释" class="headerlink" title="3）编写注释"></a>3）编写注释</h3><div style='display: none'>
+    哈哈我是注释，不会在浏览器里显示
+</div>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style&#x3D;&#39;display: none&#39;&gt;</span><br><span class="line">    哈哈我是注释，不会在浏览器里显示</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-任务列表编写"><a href="#4-任务列表编写" class="headerlink" title="4)任务列表编写"></a>4)任务列表编写</h3><ul>
+<li>任务一 未做任务 <code>- + 空格 + [ ]</code></li>
+<li></li>
+<li><input checked="" disabled="" type="checkbox"> 任务二 已做任务 <code>- + 空格 + [x]</code></li>
+<li><input disabled="" type="checkbox"> </li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-</span> <span class="selector-attr">[ ]</span> 任务一 未做任务 `<span class="selector-tag">-</span> + 空格 + <span class="selector-attr">[ ]</span>`</span><br><span class="line"><span class="selector-tag">-</span> <span class="selector-attr">[x]</span> 任务二 已做任务 `<span class="selector-tag">-</span> + 空格 + <span class="selector-attr">[x]</span>`</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-布局"><a href="#4-布局" class="headerlink" title="4.布局"></a>4.布局</h2><h3 id="1）字体样式："><a href="#1）字体样式：" class="headerlink" title="1）字体样式："></a>1）字体样式：</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> <em>斜体</em>或<em>斜体</em></li>
+<li><input checked="" disabled="" type="checkbox"> <strong>粗体</strong></li>
+<li><input checked="" disabled="" type="checkbox"> <strong><em>加粗斜体</em></strong></li>
+<li><input checked="" disabled="" type="checkbox"> <del>删除线</del></li>
+<li><input checked="" disabled="" type="checkbox"> <u>下划线</u></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*斜体*或_斜体_</span><br><span class="line">**粗体**</span><br><span class="line">***加粗斜体***</span><br><span class="line">~~删除线~~</span><br><span class="line">&lt;u&gt;下划线&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注脚</li>
+</ul>
+<p>[^2]:HyperText Markup Language 超文本标记语言</p>
+<p>代码编写：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">使用 <span class="selector-tag">Markdown</span><span class="selector-attr">[^1]</span>可以效率的书写文档, 直接转换成 <span class="selector-tag">HTML</span><span class="selector-attr">[^2]</span>。</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[^1]</span><span class="selector-pseudo">:Markdown</span>是一种纯文本标记语言</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[^2]</span><span class="selector-pseudo">:HyperText</span> <span class="selector-tag">Markup</span> <span class="selector-tag">Language</span> 超文本标记语言</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自动链接</li>
+</ul>
+<p>&lt;<a target="_blank" rel="noopener" href="http://baidu.com&gt;/">http://baidu.com&gt;</a>&emsp;</p>
+<p><strong>本人的邮箱：</strong></p>
+<p>&lt;<a href="mailto:&#49;&#x31;&#x30;&#x39;&#x31;&#53;&#50;&#x30;&#x39;&#x33;&#x40;&#x71;&#113;&#x2e;&#99;&#x6f;&#x6d;">&#49;&#x31;&#x30;&#x39;&#x31;&#53;&#50;&#x30;&#x39;&#x33;&#x40;&#x71;&#113;&#x2e;&#99;&#x6f;&#x6d;</a>&gt;</p>
+<p>代码生成：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;http:<span class="comment">//baidu.com/&gt;&amp;emsp;</span></span><br><span class="line">&amp;lt;<span class="number">1109152093</span><span class="meta">@qq</span>.com&amp;gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-有序，无序列表"><a href="#2-有序，无序列表" class="headerlink" title="2)有序，无序列表"></a>2)有序，无序列表</h3><p>使用*，+，- 表示无序列表</p>
+<p>效果：</p>
+<ul>
+<li>无序列表1</li>
+</ul>
+<ul>
+<li>无序列表2</li>
+</ul>
+<ul>
+<li>无序列表3</li>
+</ul>
+<p>代码生成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 无序列表项 一</span><br><span class="line">+ 无序列表项 二</span><br><span class="line">- 无序列表项 三</span><br></pre></td></tr></table></figure>
+
+<p>有序列表：</p>
+<ol>
+<li>有序列表1</li>
+<li>有序列表2</li>
+<li>有序；列表3</li>
+</ol>
+<p>代码实现:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 有序列表项 一</span><br><span class="line">2. 有序列表项 二</span><br><span class="line">3. 有序列表项 三</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-多级引用"><a href="#5-多级引用" class="headerlink" title="5.多级引用"></a>5.多级引用</h2><blockquote>
+<p>教程在哪？ - 小白</p>
+<blockquote>
+<p>自己看教程！ - 愤青</p>
+<blockquote>
+<p>请问 Markdwon 怎么用？ - 小白</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>自己看教程！ - 愤青</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>请问 Markdwon 怎么用？ - 小白</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>代码实现：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 教程在哪？ - 小白</span><br><span class="line"> &gt;自己看教程！ - 愤青</span><br><span class="line">  &gt;请问 Markdwon 怎么用？ - 小白</span><br><span class="line"><span class="meta">&gt;&gt;</span> 自己看教程！ - 愤青</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; 请问 Markdwon 怎么用？ - 小白</span><br></pre></td></tr></table></figure>
+
+<h3 id="1）转义字符、字体、字号、颜色"><a href="#1）转义字符、字体、字号、颜色" class="headerlink" title="1）转义字符、字体、字号、颜色"></a>1）转义字符、字体、字号、颜色</h3><p>Markdown中的转义字符为\，转义的有：</p>
+<p>\ 反斜杠 抵消效果</p>
+<p>` 反引号 * 星号 _ 下划线 {} 大括号 [] 中括号 () 小括号  # 井号 + 加号 - 减号 . 英文句号 ! 感叹号</p>
+<p>如下：</p>
+<p>- * _ [] {} () # + . ! </p>
+<p>代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\- \* \_ \[] \&#123;&#125; \() \# \+ \. \! </span><br></pre></td></tr></table></figure>
+
+
+
+<p>字体样式，颜色：</p>
+<p><font face="黑体">我是黑体字</font><br> <font face="微软雅黑">我是微软雅黑</font><br> <font face="STCAIYUN">我是华文彩云</font><br> <font color=#0099ff size=12 face="黑体">黑体</font><br> <font color=gray size=5>gray</font><br> <font color=#00ffff size=3>null</font></p>
+<p>代码显示：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;</span><br><span class="line">&lt;font face=&quot;微软雅黑&quot;&gt;我是微软雅黑&lt;/font&gt;</span><br><span class="line">&lt;font face=&quot;STCAIYUN&quot;&gt;我是华文彩云&lt;/font&gt;</span><br><span class="line">&lt;font color=#0099ff size=12 face=&quot;黑体&quot;&gt;黑体&lt;/font&gt;</span><br><span class="line">&lt;font color=gray size=5&gt;gray&lt;/font&gt;</span><br><span class="line">&lt;font color=#00ffff size=3&gt;null&lt;/font&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-显示目录结构："><a href="#2-显示目录结构：" class="headerlink" title="2)显示目录结构："></a>2)显示目录结构：</h3><p>目录: </p>
+<p>[TOC]</p>
+<p>代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-表格"><a href="#6-表格" class="headerlink" title="6.表格"></a>6.表格</h2><p>语法说明：</p>
+<p>不管是哪种方式，第一行为表头，第二行分隔表头和主体部分，第三行开始每一行为一个表格行。<br> 列于列之间用管道符|隔开。原生方式的表格每一行的两边也要有管道符。<br> 第二行还可以为不同的列指定对齐方向。默认为左对齐，在-右边加上:就右对齐。<br> <code>:-</code> 左对齐， <code>:-:</code> 中心对齐，<code>-:</code> 右对齐</p>
+<table>
+<thead>
+<tr>
+<th align="left">学号</th>
+<th align="center">性别</th>
+<th align="right">序号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">小胡</td>
+<td align="center">男</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">小兰</td>
+<td align="center">男</td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left">小魏</td>
+<td align="center">女</td>
+<td align="right">27</td>
+</tr>
+</tbody></table>
+<h3 id="1-LaTeX公式"><a href="#1-LaTeX公式" class="headerlink" title="1)LaTeX公式"></a>1)LaTeX公式</h3><ul>
+<li><strong>表示行内公式</strong></li>
+</ul>
+<p>显示效果：</p>
+<p>质能守恒方程可以用一个很简洁的方程式 <code>$E = m c^2 $</code>来表达。</p>
+<p>$$ E = m c^2 $$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E &#x3D; m c^2</span><br></pre></td></tr></table></figure>
+
+<p>块级公式：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`math</span></span><br><span class="line"><span class="string">x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span></span><br><span class="line"><span class="string">``</span><span class="string">`math</span></span><br><span class="line"><span class="string">[\frac&#123;1&#125;&#123;\Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;\frac25 \pi&#125;&#125; =</span></span><br><span class="line"><span class="string">1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-6\pi&#125;&#125;</span></span><br><span class="line"><span class="string">&#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125; &#123;1+\ldots&#125; &#125; &#125; &#125;]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x &#x3D; \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; </span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[\frac&#123;1&#125;&#123;\Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;\frac25 \pi&#125;&#125; &#x3D;</span><br><span class="line">1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-6\pi&#125;&#125;</span><br><span class="line">&#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125; &#123;1+\ldots&#125; &#125; &#125; &#125;]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，剩下的 Markdown 都会帮你处理，例如：</p>
+<p>第一个例子：</p>
+<div class="footer">
+&copy 2004 Foo Corporation
+</div>
+
+<p>对应代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;footer&quot;&gt;</span><br><span class="line">&amp;copy 2004 Foo Corporation</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第二个例子：</p>
+<center>
+<table>
+<tr>
+<th rowspan="2">值班人员</th>
+<th>星期一</th>
+<th>星期二</th>
+<th>星期三</th>
+</tr>
+<tr>
+<td>李强</td>
+<td>张明</td>
+<td>王平</td>
+</tr>
+</table>
+</center>
+
+<p><strong><em>创建表格可以用html语法哦！</em></strong></p>
+<p>对用语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;center&gt;</span><br><span class="line">&lt;table&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;th rowspan&#x3D;&quot;2&quot;&gt;值班人员&lt;&#x2F;th&gt;</span><br><span class="line">&lt;th&gt;星期一&lt;&#x2F;th&gt;</span><br><span class="line">&lt;th&gt;星期二&lt;&#x2F;th&gt;</span><br><span class="line">&lt;th&gt;星期三&lt;&#x2F;th&gt;</span><br><span class="line">&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;td&gt;李强&lt;&#x2F;td&gt;</span><br><span class="line">&lt;td&gt;张明&lt;&#x2F;td&gt;</span><br><span class="line">&lt;td&gt;王平&lt;&#x2F;td&gt;</span><br><span class="line">&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;&#x2F;table&gt;</span><br><span class="line">&lt;&#x2F;center&gt;</span><br></pre></td></tr></table></figure>
+
+<p>以下用法字符代码后面需要加<code>;</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">特殊字符</th>
+<th align="center">描述</th>
+<th align="center">字符的代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center">空格符</td>
+<td align="center"><code>nbsb;</code></td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">小于号</td>
+<td align="center"><code>&amp;lt;</code></td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">大于号</td>
+<td align="center"><code>&amp;gt;</code></td>
+</tr>
+<tr>
+<td align="center">&amp;</td>
+<td align="center">和号</td>
+<td align="center"><code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td align="center">￥</td>
+<td align="center">人民币</td>
+<td align="center"><code>&amp;yen;</code></td>
+</tr>
+<tr>
+<td align="center">©</td>
+<td align="center">版权</td>
+<td align="center"><code>&amp;copy;</code></td>
+</tr>
+<tr>
+<td align="center">®</td>
+<td align="center">注册商标</td>
+<td align="center"><code>&amp;reg;</code></td>
+</tr>
+<tr>
+<td align="center">°C</td>
+<td align="center">摄氏度</td>
+<td align="center"><code>&amp;deg;C</code></td>
+</tr>
+<tr>
+<td align="center">±</td>
+<td align="center">正负号</td>
+<td align="center"><code>&amp;plusmn;</code></td>
+</tr>
+<tr>
+<td align="center">×</td>
+<td align="center">乘号</td>
+<td align="center"><code>&amp;times;</code></td>
+</tr>
+<tr>
+<td align="center">÷</td>
+<td align="center">除号</td>
+<td align="center"><code>&amp;divide;</code></td>
+</tr>
+<tr>
+<td align="center">²</td>
+<td align="center">平方（上标²）</td>
+<td align="center"><code>&amp;sup2;</code></td>
+</tr>
+<tr>
+<td align="center">³</td>
+<td align="center">立方（上标³）</td>
+<td align="center"><code>&amp;sup3;</code></td>
+</tr>
+</tbody></table>
+<h3 id="2）段落代码区块："><a href="#2）段落代码区块：" class="headerlink" title="2）段落代码区块："></a>2）段落代码区块：</h3><p>例子：头文件: <code>#include&lt;iostream</code></p>
+<center>行中心对齐<center>
+
+<p align="left">行左对齐</p>
+
+<p align="right">行右对齐</p>
+
+
+
+<p>代码实现：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子：头文件: `<span class="selector-id">#include</span>&lt;<span class="selector-tag">iostream</span>`</span><br><span class="line">&lt;center&gt;行中心对齐&lt;/center&gt;</span><br><span class="line">&lt;p align=&quot;left&quot;&gt;行左对齐&lt;/p&gt;</span><br><span class="line">&lt;p align=&quot;right&quot;&gt;行右对齐&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
