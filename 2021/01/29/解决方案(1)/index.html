@@ -102,7 +102,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2021-01-29</span>
-            <span class="time">11:23:02</span>
+            <span class="time">11:30:40</span>
           </span>
           
         </div>
@@ -113,7 +113,7 @@
           <h3 id="症状："><a href="#症状：" class="headerlink" title="症状："></a>症状：</h3><p>桌面和任务栏图标不断刷新，CPU资源占用高，极度影响使用</p>
 <h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>一般是windows更新或者卸载了某软件引起，系统和应用争抢默认打开方式。</p>
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>这里我提供一个更通用、更彻底的解决方法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 按win+r，输入regedit，找到HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\currentversion\Explorer\FileExts，将FileExts 整个注册表项右键导出备份，注意是整个，备份好先别关掉页面</span><br><span class="line"></span><br><span class="line">2. 打开任务管理器，将资源管理器（即explorer.exe）进程结束掉。结束后，再到注册表删除FileExts，删完按Ctrl+alt+del，右下角电源图标重启电脑</span><br><span class="line"></span><br><span class="line">   重启后桌面会闪几下，这是在初始化，随后恢复正常</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 按win+r，输入regedit，</span><br><span class="line">找到HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\currentversion\Explorer\FileExts，</span><br><span class="line">将FileExts 整个注册表项右键导出备份，注意是整个，<span class="tag">&lt;<span class="name">备份好</span>&gt;</span>[人习惯]	先别关掉页面个。</span><br><span class="line"></span><br><span class="line">2.</span><br><span class="line">打开任务管理器，将资源管理器（即explorer.exe）进程结束掉。</span><br><span class="line">结束后，再到注册表删除FileExts，删完按Ctrl+alt+del，右下角电源图标重启电脑。</span><br><span class="line">重启后桌面会闪几下，这是在初始化，随后恢复正常。</span><br></pre></td></tr></table></figure>
 
 <center>
     <div class="footer">
