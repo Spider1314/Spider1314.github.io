@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="电脑图标闪烁解决方案" />
+  <meta property="og:title" content="HWZ-BLOG" />
   <meta property="og:description" content="" />
   <meta property="og:site_name" content="HWZ-BLOG" />
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
   <meta property="og:image" content="http://example.com" />
   
   <link rel="alternate" href="/atom.xml" title="HWZ-BLOG" type="application/atom+xml">
@@ -38,7 +38,8 @@
 
 <meta name="generator" content="Hexo 5.1.1"></head>
   <body>
-    <!-- Page Header -->
+    <!-- Archive Header -->
+<!-- Page Header -->
 
 
 <header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
@@ -46,7 +47,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">电脑图标闪烁解决方案</p>
+          <p class="title">Blog Archives</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -90,43 +91,34 @@
     </div>
   </div>
 </header>
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By John Doe</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2021-01-29</span>
-            <span class="time">14:01:57</span>
-          </span>
-          
-        </div>
-        <!-- Tags -->
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <h3 id="症状："><a href="#症状：" class="headerlink" title="症状："></a>症状：</h3><p>桌面和任务栏图标不断刷新，CPU资源占用高，极度影响使用</p>
-<h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>一般是windows更新或者卸载了某软件引起，系统和应用争抢默认打开方式。</p>
-<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>这里我提供一个更通用、更彻底的解决方法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 按win+r，输入regedit，</span><br><span class="line">找到HKEY_CURRENT_USER\SOFTWARE\MICROSOFT\WINDOWS\currentversion\Explorer\FileExts，</span><br><span class="line">将FileExts 整个注册表项右键导出备份，注意是整个，<span class="tag">&lt;<span class="name">备份好</span>&gt;</span>[人习惯]	先别关掉页面个。</span><br><span class="line"></span><br><span class="line">2.</span><br><span class="line">打开任务管理器，将资源管理器（即explorer.exe）进程结束掉。</span><br><span class="line">结束后，再到注册表删除FileExts，删完按Ctrl+alt+del，右下角电源图标重启电脑。</span><br><span class="line">重启后桌面会闪几下，这是在初始化，随后恢复正常。</span><br></pre></td></tr></table></figure>
+<!-- Archive List -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      
+        <div class="archive-item">
+  <a href="/2021/05/14/idea%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/" class="post-title">
+    IDEA破解教程（Window&amp;Mac）
+  </a>
+  <div class="date text-muted">Posted on 2021-05-14 14:00:55</div>
+</div>
 
-<center>
-    <div class="footer">
-        &copy 2021 hwz-blog
-    <div/>    
-</center>
+      
 
-
-        </div>
-      </div>
     </div>
   </div>
-</article>
+</div>
+<!-- Pagination -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 col-md-offset-1">
+      <ul class="pagination">
+          
+          
+      </ul>
+    </div>
+  </div>
+</div>
 
 
 

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="IDEA破解教程（Window&amp;Mac）" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="HWZ-BLOG" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://example.com" />
+  
+  <link rel="alternate" href="/atom.xml" title="HWZ-BLOG" type="application/atom+xml">
+  
+  
+  <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>HWZ-BLOG</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">IDEA破解教程（Window&amp;Mac）</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+            <li>
+              <a href="/">
+                
+                Home
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="/archives">
+                
+                Archives
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://github.com/<your-github-username>">
+                
+                Github
+                
+              </a>
+            </li>
+            
+            <li>
+              <a href="mailto:<your-email-address>">
+                
+                Email
+                
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2021-05-14</span>
+            <span class="time">14:01:57</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h3 id="Mac的破解流程"><a href="#Mac的破解流程" class="headerlink" title="Mac的破解流程"></a>Mac的破解流程</h3><p>从我的<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1bY-1RcusN8QzZLwua7lYoQ">百度网盘</a>下载资源文件</p>
+<p><u>提取码：uxo2</u></p>
+<p>在里面你会得到三个文件</p>
+<p>分别是到2099年的秘钥，activity-agent.jar和host文件</p>
+<p>首先你需要找到你电脑的hosts文件，不会的可以百度</p>
+<p>Mac里对hosts更改首先你需要在访达里使用组合键command+shift+G然后搜索/private对里面的etc文件夹显示其简介，就是右键操作里的显示简介一栏。</p>
+<p>之后你需要在最下面的共享与权限里面将小锁头打开，这是需要你输入密码，是你电脑的密码，然后将wheel和everyone都设置为读与写</p>
+<p>进入etc文件夹之后找到hosts文件，对其进行跟etc文件夹同样的操作，之后你就可以对hosts进行更改了，在下面加上我资源包里hosts文件的那就代码，这样可以避免官方屏蔽。</p>
+<p>再之后打开idea，在以2021.1为例在左下角设置里面找到Edit Custom VM Options然后在里面加入-javaagent:（你对jar包右键显示简介，然后复制位置，放在此处，别忘了最后加上jar包的名字/active-agent.jar）</p>
+<p>保存之后重启idea然后左下角点击设置找到Manage License然后选择第二个选项，将秘钥复制进去，然后点击Activity这样就破解到了2099年。</p>
+<h3 id="可能会遇到的问题"><a href="#可能会遇到的问题" class="headerlink" title="可能会遇到的问题"></a>可能会遇到的问题</h3><p>VM文件里路径写错导致的idea重启失败</p>
+<p>解决方案：在访达里的应用程序里对idea右键选择显示包内容，你会看到Contents文件夹，进入里面之后选择MacOS文件夹，运行里面的idea，你会在第二行左右看到ERROR+路径，根据路径找到idea.vmoptions(这里要注意不是Contents下bin文件夹下的)我的路径，之前我出错的时候的路径是：在桌面打开终端输入路径：cd /Library/Application Support/JetBrains/IntelliJIdea2020.1/+文件名字就是（idea.vmoptions）这只是我的路径到时候看你运行出来是哪个路径下的文件有问题。将你加入的内句话删掉就好了。然后写入正确的路径。（注意如果是因为你改了idea.vmoptions导致的idea打不开卸载重装是不好使的，只有这一种解决办法）</p>
+<p>目前只有这一个问题之后有其他问题可以qq联系我：1109152093</p>
+<hr>
+<h3 id="Windows的破解"><a href="#Windows的破解" class="headerlink" title="Windows的破解"></a>Windows的破解</h3><p>我这里是对idea2019.2.2版本进行破解</p>
+<p><a href="">点击这里</a>可以下载安装包和破解文件和秘钥，下载好了资源包你在里面会看到三个文件：jetbrains-agent.jar，安装包，和破解秘钥</p>
+<p>你安装好了idea打开idea确定可以开启就可以关闭了，然后右键屏幕的idea图标选择显示文件位置，然后将jetbrains-agent.jar放进去，然后打开idea64.exe.vmoptions将jetbrains-agent.ja的路径放进去如：-javaagent:D:\IntelliJ IDEA 2019.2.2\bin\jetbrains-agent.jar然后保存。</p>
+<p>最后打开idea在register里选择第二项把秘钥复制进去，点击activity就可以了！</p>
+<h3 id="可能会遇到的问题-1"><a href="#可能会遇到的问题-1" class="headerlink" title="可能会遇到的问题"></a>可能会遇到的问题</h3><p>暂时没有，若有可以通过上方的联系方式问我，之后我也会在这里面补充的。</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
